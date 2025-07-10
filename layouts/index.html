@@ -1,26 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Landing Page</title>
-</head>
-<body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <nav>
-      <a href="/">Home</a> |
-      <a href="/posts">Blog</a>
-    </nav>
-  </header>
-
+{{ define "main" }}
   <main>
-    <h2>Landing Page Content</h2>
-    <p>This is your custom homepage written in pure HTML.</p>
-  </main>
+    <div class="homepage-text">
+      {{ .Content }}
+    </div>
 
-  <footer>
-    <hr>
-    <p>&copy; 2025 My Website</p>
-  </footer>
-</body>
-</html>
+    <h2>Latest Posts</h2>
+    <ul>
+      {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+{{ end }}
