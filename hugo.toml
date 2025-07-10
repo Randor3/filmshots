@@ -1,4 +1,8 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://your-site.pages.dev"
+languageCode = "en-us"
+title = "Filmshots"
 theme = "ananke"
+
+[params]
+  description = "Discover and showcase the best scenes in cinema"
+
