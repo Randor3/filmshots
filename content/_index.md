@@ -2,28 +2,14 @@
 title: "Welcome to Filmshots"
 ---
 
-## About the App
+## About Filmshots
 
-**Filmshots** is a tool for film lovers. Whether you're tracking shots, capturing favorite moments, or blogging about cinema — this is your place.
+Filmshots is an app where film lovers can...
 
-We’re building it to be:
-
-- Simple and clean
-- Designed for cinephiles
-- Blogging- and gallery-friendly
+We’re building a platform to catalog, discuss, and highlight the most powerful shots in film.
 
 ---
 
-## What You Can Expect
+## Our Vision
 
-Filmshots will let users:
-
-- Create posts with stills, notes, and timestamps
-- Organize by film, director, or style
-- Share beautiful layouts with others
-
----
-
-## Behind the Scenes
-
-This is a work in progress — built with love using [Hugo](https://gohugo.io) and open-source tools. Updates coming soon!
+Capture what matters. Frame by frame.
