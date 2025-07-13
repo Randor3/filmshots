@@ -1,16 +1,38 @@
 {{ define "main" }}
-  <main>
-    <div class="homepage-text">
-      {{ .Content }}
-    </div>
+  <main class="container mx-auto px-4 py-8">
+    <section class="homepage-intro mb-10">
+      <div class="text-lg leading-relaxed">
+        {{ .Content }}
+      </div>
+    </section>
 
-    <h2>Latest Posts</h2>
-    <ul>
-      {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
+    <section class="latest-posts">
+      <h2 class="text-2xl font-bold mb-4">Latest Posts</h2>
+
+      {{ $latestPosts := first 5 (where .Site.RegularPages "Section" "posts") }}
+      {{ if $latestPosts }}
+        <ul class="space-y-4">
+          {{ range $latestPosts }}
+            <li class="post-item border-b pb-3">
+              <a href="{{ .RelPermalink }}" class="text-xl text-blue-600 hover:underline">
+                {{ .Title }}
+              </a>
+              {{ with .Date }}
+                <p class="text-sm text-gray-500">{{ .Format "Jan 2, 2006" }}</p>
+              {{ end }}
+              {{ with .Params.excerpt }}
+                <p class="mt-1 text-base text-gray-700">{{ . }}</p>
+              {{ else }}
+                {{ with .Summary }}
+                  <p class="mt-1 text-base text-gray-700">{{ . | plainify | truncate 150 }}</p>
+                {{ end }}
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p class="text-gray-600">No recent posts available.</p>
       {{ end }}
-    </ul>
+    </section>
   </main>
 {{ end }}
